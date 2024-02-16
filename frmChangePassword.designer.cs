@@ -114,7 +114,7 @@ namespace DBPROJECT
             this.btnApply.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnApply.ImageKey = "edit-icon-png-3597.png";
             this.btnApply.ImageList = this.imageList1;
-            this.btnApply.Location = new System.Drawing.Point(189, 92);
+            this.btnApply.Location = new System.Drawing.Point(177, 89);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 2;
