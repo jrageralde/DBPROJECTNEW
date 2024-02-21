@@ -1,7 +1,7 @@
 ﻿
 namespace DBPROJECT
 {
-    partial class UserProfilefrm
+    partial class frmUserProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace DBPROJECT
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfilefrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserProfile));
             this.pictBoxUser = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -118,6 +118,7 @@ namespace DBPROJECT
             this.btnChangePwd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnChangePwd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChangePwd.UseVisualStyleBackColor = true;
+            this.btnChangePwd.Click += new System.EventHandler(this.btnChangePwd_Click);
             // 
             // label4
             // 
@@ -276,7 +277,7 @@ namespace DBPROJECT
             this.label1.TabIndex = 122;
             this.label1.Text = "Login Name";
             // 
-            // UserProfilefrm
+            // frmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -299,7 +300,8 @@ namespace DBPROJECT
             this.Controls.Add(this.pictBoxUser);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLoadPhoto);
-            this.Name = "UserProfilefrm";
+            this.Name = "frmUserProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Profile";
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).EndInit();
             this.ResumeLayout(false);

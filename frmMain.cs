@@ -68,20 +68,24 @@ namespace DBPROJECT
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
-                ChangePasswordfrm = new frmChangePassword(Globals.gIdUser, Globals.gLoginName);
-                ChangePasswordfrm.FormClosed += ChangePasswordfrm_FormClosed;
-
-                ChangePasswordfrm.ShowDialog();
+            ChangePasswordfrm = new frmChangePassword(Globals.gIdUser, Globals.gLoginName);
+            ChangePasswordfrm.FormClosed += ChangePasswordfrm_FormClosed;
+           
+            ChangePasswordfrm.ShowDialog();
         }
 
         private frmUserProfile UserProfilefrm;
-
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             UserProfilefrm = new frmUserProfile(Globals.gIdUser, Globals.gLoginName);
             UserProfilefrm.FormClosed += UserProfilefrm_FormClosed;
+            UserProfilefrm.MdiParent = this;
+            UserProfilefrm.Show();
+        }
 
-            UserProfilefrm.ShowDialog();
+        private void UserProfilefrm_FormClosed(object sender, EventArgs e)
+        {
+            UserProfilefrm.Dispose();
         }
     }
 }
