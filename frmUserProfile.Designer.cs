@@ -68,7 +68,7 @@ namespace DBPROJECT
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnClear.ImageIndex = 4;
             this.btnClear.ImageList = this.imageList1;
-            this.btnClear.Location = new System.Drawing.Point(215, 210);
+            this.btnClear.Location = new System.Drawing.Point(211, 210);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(113, 23);
             this.btnClear.TabIndex = 30;
