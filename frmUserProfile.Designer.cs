@@ -76,6 +76,7 @@ namespace DBPROJECT
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // imageList1
             // 
@@ -102,6 +103,7 @@ namespace DBPROJECT
             this.btnLoadPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoadPhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoadPhoto.UseVisualStyleBackColor = true;
+            this.btnLoadPhoto.Click += new System.EventHandler(this.btnLoadPhoto_Click);
             // 
             // btnChangePwd
             // 
@@ -194,9 +196,9 @@ namespace DBPROJECT
             // 
             // pkrBirthdate
             // 
-            this.pkrBirthdate.CustomFormat = "";
+            this.pkrBirthdate.CustomFormat = "MM/dd/yyyy";
             this.pkrBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pkrBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pkrBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.pkrBirthdate.Location = new System.Drawing.Point(106, 374);
             this.pkrBirthdate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.pkrBirthdate.Name = "pkrBirthdate";
@@ -303,6 +305,7 @@ namespace DBPROJECT
             this.Name = "frmUserProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Profile";
+            this.Load += new System.EventHandler(this.frmUserProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
