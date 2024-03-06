@@ -139,7 +139,53 @@ namespace DBPROJECT
             if (openPhoto.ShowDialog() == DialogResult.OK)
             {
                 pictBoxUser.Image = Image.FromFile(openPhoto.FileName);
-             
+
+                MemoryStream ms = new MemoryStream();
+
+                this.pictBoxUser.Image.Save(ms, pictBoxUser.Image.RawFormat);  // save picture to ms
+
+                byte[] img = ms.ToArray();
+
+                if (Globals.glOpenSqlConn())
+                {
+                    String qrystr = "update users set photo=@img where id =" +
+                        this.iduser.ToString();  /////////////////////////////////////
+
+                    SqlCommand cmd = new SqlCommand(qrystr, Globals.sqlconn);
+
+                    cmd.Parameters.Add("@img", SqlDbType.Image); //MySqlDbType.Blob
+                    cmd.Parameters["@img"].Value = img;
+
+                    if (cmd.ExecuteNonQuery() == 1)
+                        csMessageBox.Show("New photo is saved...", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                Globals.glCloseSqlConn();
+
+
+
+            }
+        }
+
+        private void EnableSavebutton(object sender, KeyPressEventArgs e)
+        {
+            this.btnSave.Enabled = true;
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+
+            this.btnSave.Enabled = false;
+        }
+
+        private void frmUserProfile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.btnSave.Enabled)
+            {
+
+
             }
         }
     }
