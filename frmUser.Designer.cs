@@ -50,7 +50,7 @@ namespace DBPROJECT
             // dgvMain
             // 
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMain.Location = new System.Drawing.Point(12, 36);
+            this.dgvMain.Location = new System.Drawing.Point(12, 28);
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.Size = new System.Drawing.Size(837, 452);
             this.dgvMain.TabIndex = 0;
