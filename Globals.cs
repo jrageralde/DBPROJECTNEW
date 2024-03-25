@@ -191,11 +191,11 @@ namespace DBPROJECT
         {
             String yy, mm, dd;
 
-            yy = DateTime.Parse(DateTime.Now.ToString()).Year.ToString();
-            mm = DateTime.Parse(DateTime.Now.ToString()).Month.ToString();
+            yy = DateTime.Parse(dt.ToString()).Year.ToString();
+            mm = DateTime.Parse(dt.ToString()).Month.ToString();
             if (mm.Length<2) mm = "0" + mm;
 
-            dd = DateTime.Parse(DateTime.Now.ToString()).Day.ToString();
+            dd = DateTime.Parse(dt.ToString()).Day.ToString();
             if (dd.Length < 2) dd = "0" + dd;
 
             return yy.ToString() + "/" + mm.ToString() + "/" + dd.ToString()+" 00:00:00";
@@ -207,20 +207,20 @@ namespace DBPROJECT
         {
             String yy, mm, dd, hh, nn, ss;
 
-            yy = DateTime.Parse(DateTime.Now.ToString()).Year.ToString();
-            mm = DateTime.Parse(DateTime.Now.ToString()).Month.ToString();
+            yy = DateTime.Parse(dt.ToString()).Year.ToString();
+            mm = DateTime.Parse(dt.ToString()).Month.ToString();
             if (mm.Length < 2) mm = "0" + mm;
 
-            dd = DateTime.Parse(DateTime.Now.ToString()).Day.ToString();
+            dd = DateTime.Parse(dt.ToString()).Day.ToString();
             if (dd.Length < 2) dd = "0" + dd;
 
-            hh = DateTime.Parse(DateTime.Now.ToString()).Hour.ToString();
+            hh = DateTime.Parse(dt.ToString()).Hour.ToString();
             if (hh.Length < 2) hh = "0" + hh;
 
-            nn = DateTime.Parse(DateTime.Now.ToString()).Minute.ToString();
+            nn = DateTime.Parse(dt.ToString()).Minute.ToString();
             if (nn.Length < 2) nn = "0" + nn;
 
-            ss = DateTime.Parse(DateTime.Now.ToString()).Second.ToString();
+            ss = DateTime.Parse(dt.ToString()).Second.ToString();
             if (ss.Length < 2) ss = "0" + ss;
 
             return yy.ToString() + "/" + mm.ToString() + "/" + dd.ToString() + " "
@@ -233,11 +233,11 @@ namespace DBPROJECT
         {
             String yy, mm, dd;
 
-            yy = DateTime.Parse(DateTime.Now.ToString()).Year.ToString();
-            mm = DateTime.Parse(DateTime.Now.ToString()).Month.ToString();
+            yy = DateTime.Parse(dt.ToString()).Year.ToString();
+            mm = DateTime.Parse(dt.ToString()).Month.ToString();
             if (mm.Length < 2) mm = "0" + mm;
 
-            dd = DateTime.Parse(DateTime.Now.ToString()).Day.ToString();
+            dd = DateTime.Parse(dt.ToString()).Day.ToString();
             if (dd.Length < 2) dd = "0" + dd;
 
             return dd.ToString() + "/" + mm.ToString() + "/" + yy.ToString() + " 00:00:00";
@@ -249,20 +249,20 @@ namespace DBPROJECT
         {
             String yy, mm, dd, hh, nn, ss;
 
-            yy = DateTime.Parse(DateTime.Now.ToString()).Year.ToString();
-            mm = DateTime.Parse(DateTime.Now.ToString()).Month.ToString();
+            yy = DateTime.Parse(dt.ToString()).Year.ToString();
+            mm = DateTime.Parse(dt.ToString()).Month.ToString();
             if (mm.Length < 2) mm = "0" + mm;
 
-            dd = DateTime.Parse(DateTime.Now.ToString()).Day.ToString();
+            dd = DateTime.Parse(dt.ToString()).Day.ToString();
             if (dd.Length < 2) dd = "0" + dd;
 
-            hh = DateTime.Parse(DateTime.Now.ToString()).Hour.ToString();
+            hh = DateTime.Parse(dt.ToString()).Hour.ToString();
             if (hh.Length < 2) hh = "0" + hh;
 
-            nn = DateTime.Parse(DateTime.Now.ToString()).Minute.ToString();
+            nn = DateTime.Parse(dt.ToString()).Minute.ToString();
             if (nn.Length < 2) nn = "0" + nn;
 
-            ss = DateTime.Parse(DateTime.Now.ToString()).Second.ToString();
+            ss = DateTime.Parse(dt.ToString()).Second.ToString();
             if (ss.Length < 2) ss = "0" + ss;
 
             return dd.ToString() + "/" + mm.ToString() + "/" + yy.ToString() + " "

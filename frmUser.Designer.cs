@@ -52,9 +52,9 @@ namespace DBPROJECT
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Location = new System.Drawing.Point(12, 28);
             this.dgvMain.Name = "dgvMain";
-            this.dgvMain.Size = new System.Drawing.Size(837, 452);
+            this.dgvMain.Size = new System.Drawing.Size(1035, 452);
             this.dgvMain.TabIndex = 0;
-            this.dgvMain.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellEndEdit);
+            this.dgvMain.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellValueChanged);
             this.dgvMain.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMain_RowPostPaint);
             this.dgvMain.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvMain_RowPrePaint);
             this.dgvMain.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvMain_UserDeletingRow);
@@ -81,7 +81,7 @@ namespace DBPROJECT
             this.bNavMain.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bNavMain.Name = "bNavMain";
             this.bNavMain.PositionItem = this.bindingNavigatorPositionItem;
-            this.bNavMain.Size = new System.Drawing.Size(861, 25);
+            this.bNavMain.Size = new System.Drawing.Size(1061, 25);
             this.bNavMain.TabIndex = 1;
             this.bNavMain.Text = "bindingNavigator1";
             // 
@@ -157,7 +157,7 @@ namespace DBPROJECT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 500);
+            this.ClientSize = new System.Drawing.Size(1061, 500);
             this.Controls.Add(this.bNavMain);
             this.Controls.Add(this.dgvMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

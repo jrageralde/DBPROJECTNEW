@@ -62,7 +62,7 @@ namespace DBPROJECT
 
         private void FormatGrid()
         {
-            this.dgvMain.Columns["id"].Visible = false;
+            this.dgvMain.Columns["id"].Visible = true;
 
             this.dgvMain.Columns["loginname"].HeaderText = "Login Name";
             this.dgvMain.Columns["active"].HeaderText = "Active";
@@ -72,7 +72,7 @@ namespace DBPROJECT
             this.dgvMain.Columns["smtpport"].HeaderText = "SMTP Port";
             this.dgvMain.Columns["gender"].HeaderText = "Gender";
             this.dgvMain.Columns["birthdate"].HeaderText = "BirthDay";
-            this.dgvMain.Columns["birthdate"].Visible = false;
+            this.dgvMain.Columns["birthdate"].Visible = true;
 
             this.dgvMain.BackgroundColor = Globals.gGridOddRowColor;
             this.dgvMain.AlternatingRowsDefaultCellStyle.BackColor = Globals.gGridEvenRowColor;
@@ -144,7 +144,7 @@ namespace DBPROJECT
          
         }
 
-        private void dgvMain_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgvMain_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             long userid = 0;
 
@@ -154,6 +154,11 @@ namespace DBPROJECT
                 {
 
                     DataGridViewRow row = dgvMain.CurrentRow;
+
+                    if (row.Cells[this.idcolumn].Value == DBNull.Value)
+                        userid = 0;
+                    else
+                        userid = Convert.ToInt64(row.Cells[this.idcolumn].Value);
 
                     String uloginname = row.Cells["loginname"].Value == DBNull.Value ? ""
                         : row.Cells["loginname"].Value.ToString().ToUpper();
@@ -177,13 +182,16 @@ namespace DBPROJECT
                     String ugender = row.Cells["gender"].Value == DBNull.Value ? ""
                         : row.Cells["gender"].Value.ToString();
 
-                    // DateTime dt1 = row.Cells["birthdate"].Value == DBNull.Value ? ""
-                    // : row.Cells["birthdate"].Value;
-
-                    // String ubirthdate = row.Cells["birthdate"].Value == DBNull.Value ? ""
-                    //  : row.Cells["birthdate"].Value.ToString();
-
-
+                    DateTime dt3;
+                    if (userid == 0)
+                    {
+                        dt3 = DateTime.Now;
+                    } 
+                    else
+                        dt3 = DateTime.Parse(row.Cells["birthdate"].Value.ToString());
+                                        
+                    String dt4 = Globals.glToMySqlDate(dt3);
+                                       
                     if (row.Cells["loginname"].Value == DBNull.Value)
                     {
                         csMessageBox.Show("Please encode a valid user name", "Warning",
@@ -199,10 +207,6 @@ namespace DBPROJECT
                             SqlCommand cmd = new SqlCommand("spusersAddEdit", Globals.sqlconn);
                             cmd.CommandType = CommandType.StoredProcedure;
 
-                            if (row.Cells[this.idcolumn].Value == DBNull.Value)
-                                userid = 0;
-                            else
-                                userid = Convert.ToInt64(row.Cells[this.idcolumn].Value);
 
                             cmd.Parameters.AddWithValue("@uid", userid);
 
@@ -213,7 +217,7 @@ namespace DBPROJECT
                             cmd.Parameters.AddWithValue("@usmtphost", usmtphost);
                             cmd.Parameters.AddWithValue("@usmtpport", usmtpport);
                             cmd.Parameters.AddWithValue("@ugender", ugender);
-                            //  cmd.Parameters.AddWithValue("@ubirthdate", ubirthdate);
+                            cmd.Parameters.AddWithValue("@ubirthdate", dt4);
 
                             SqlDataAdapter dAdapt = new SqlDataAdapter(cmd);
 
